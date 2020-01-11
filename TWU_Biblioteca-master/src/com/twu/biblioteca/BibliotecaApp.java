@@ -13,15 +13,15 @@ public class BibliotecaApp {
 
         System.out.println("\n" + welcomeMessage.toUpperCase());
 
-        Books book1 = new Books("Mr. Mercedes");
-        Books book2 = new Books("Lord of the Rings");
-        Books book3 = new Books("Harry Potter");
+        Books book1 = new Books("Mr. Mercedes", "Stephen King", 2016);
+        Books book2 = new Books("Lord of the Rings", "J. R. R. Tolken", 1954);
+        Books book3 = new Books("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997);
 
         BookListing booksList = new BookListing(Arrays.asList(book1, book2, book3));
 
         System.out.println("\nList of Books:");
-        for (String title : booksList.getBookListing()) {
-            System.out.println(" - " + title);
+        for (Books book : booksList.getBookListing()) {
+            System.out.println(" - " + book.getTitle() + " | " + book.getAuthor() + " | " + book.getYear());
         }
 
     }

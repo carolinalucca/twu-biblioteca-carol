@@ -13,11 +13,31 @@ public class BookListing {
         this.bookList = bookList;
     }
 
-    public List<String> getBookListing() {
-        List<String> list = new ArrayList<String>();
+    public List<String> getBookTitle() {
+        List<String> titleList = new ArrayList<String>();
         for (Books book : bookList) {
-            list.add(book.getTitle());
+            titleList.add(book.getTitle());
         }
-        return list;
+        return titleList;
+    }
+
+    public List<String> getBookAuthor() {
+        List<String> authorList = new ArrayList<String>();
+        for (Books book : bookList) {
+            authorList.add(book.getAuthor());
+        }
+        return authorList;
+    }
+
+    public List<Integer> getBookYear() {
+        List<Integer> yearList = new ArrayList<Integer>();
+        for (Books book : bookList) {
+            yearList.add(book.getYear());
+        }
+        return yearList;
+    }
+
+    public List<Books> getBookListing() {
+        return bookList;
     }
 }
