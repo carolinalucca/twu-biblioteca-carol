@@ -1,5 +1,7 @@
 package com.twu.biblioteca.models;
 
+import com.twu.biblioteca.listing.BookListing;
+
 public class Books {
 
     private String title;
@@ -23,6 +25,15 @@ public class Books {
     public Integer getYear() {
         return year;
     }
+
+    public String listOfBooks() {
+        String list = "";
+
+        return list;
+    }
+
+    //TODO metodo de listar (string)
+    //TODO init - chamar no construtor do objeto
 
 
 }

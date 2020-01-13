@@ -3,41 +3,35 @@ package com.twu.biblioteca.listing;
 import com.twu.biblioteca.models.Books;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BookListing {
 
-    private List<Books> bookList;
+    private List<Books> bookList = new ArrayList<>();
 
-    public BookListing(List<Books> bookList) {
-        this.bookList = bookList;
+    public BookListing() {
+        init(bookList);
     }
 
-    public List<String> getBookTitle() {
-        List<String> titleList = new ArrayList<String>();
-        for (Books book : bookList) {
-            titleList.add(book.getTitle());
-        }
-        return titleList;
-    }
-
-    public List<String> getBookAuthor() {
-        List<String> authorList = new ArrayList<String>();
-        for (Books book : bookList) {
-            authorList.add(book.getAuthor());
-        }
-        return authorList;
-    }
-
-    public List<Integer> getBookYear() {
-        List<Integer> yearList = new ArrayList<Integer>();
-        for (Books book : bookList) {
-            yearList.add(book.getYear());
-        }
-        return yearList;
-    }
-
-    public List<Books> getBookListing() {
+    private List<Books> getBookListing() {
         return bookList;
+    }
+
+    public String listOfBooks() {
+        StringBuilder list = new StringBuilder();
+        for (Books book : getBookListing()) {
+            list.append(" - ").append(book.getTitle()).append(" | ").append(book.getAuthor()).append(" | ").append(book.getYear()).append("\n");
+        }
+        return list.toString();
+    }
+
+    public void init(List<Books> bookList) {
+        Books book1 = new Books("Mr. Mercedes", "Stephen King", 2016);
+        Books book2 = new Books("Lord of the Rings", "J. R. R. Tolken", 1954);
+        Books book3 = new Books("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997);
+
+        bookList.addAll(Arrays.asList(book1, book2, book3));
+        this.bookList = bookList;
     }
 }

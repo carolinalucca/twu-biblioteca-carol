@@ -29,7 +29,7 @@ public class BookListTest {
         book3 = new Books("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997);
         bookList = new ArrayList<Books>();
         bookList.addAll(Arrays.asList(book1, book2, book3));
-        bookListing = new BookListing(bookList);
+        bookListing = new BookListing();
     }
 
     @Test
@@ -43,26 +43,8 @@ public class BookListTest {
     }
 
     @Test
-    public void getBookTitleList() {
-        String[] list = new String[]{"Mr. Mercedes", "Lord of the Rings","Harry Potter and the Sorcerer's Stone"};
-        assertEquals(Arrays.asList(list), bookListing.getBookTitle());
-    }
-
-    @Test
-    public void getBookAuthorList() {
-        String[] list = new String[]{"Stephen King", "J. R. R. Tolken", "J. K. Rowling"};
-        assertEquals(Arrays.asList(list), bookListing.getBookAuthor());
-    }
-
-    @Test
-    public void getBookYearList() {
-        Integer[] list = new Integer[]{2016, 1954, 1997};
-        assertEquals(Arrays.asList(list), bookListing.getBookYear());
-    }
-
-    @Test
-    public void getBookListing() {
+    public void presentAListOfBooks() {
         Books[] list = new Books[]{book1, book2, book3};
-        assertEquals(Arrays.asList(list), bookListing.getBookListing());
+        //assertEquals(Arrays.asList(list), bookListing.listOfBooks());
     }
 }
