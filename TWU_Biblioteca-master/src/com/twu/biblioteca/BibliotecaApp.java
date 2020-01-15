@@ -17,14 +17,14 @@ public class BibliotecaApp {
         MenuPresenter menuPresenter = new MenuPresenter();
 
         messagePresenter.welcome();
-        menuPresenter.present();
 
         int option = 0;
 
         do {
 
+            menuPresenter.present();
             Scanner scan = new Scanner(System.in);
-            System.out.println("\nDigite uma opção: ");
+            System.out.println("Digite uma opção: ");
             option = scan.nextInt();
 
             switch (option) {

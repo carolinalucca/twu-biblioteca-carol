@@ -30,4 +30,8 @@ public class Books {
 
     public Boolean getCheckedout() { return checkout; }
 
+    public String formatBook() {
+        return " - " + getTitle() + " | " + getAuthor() + " | " + getYear() + "\n";
+    }
+
 }

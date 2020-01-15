@@ -17,7 +17,7 @@ public class BookListing {
     public void init(List<Books> bookList) {
         Books book1 = new Books("Mr. Mercedes", "Stephen King", 2016, false);
         Books book2 = new Books("Lord of the Rings", "J. R. R. Tolken", 1954, false);
-        Books book3 = new Books("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997, false);
+        Books book3 = new Books("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997, true);
 
         bookList.addAll(Arrays.asList(book1, book2, book3));
         this.bookList = bookList;
@@ -31,7 +31,7 @@ public class BookListing {
         StringBuilder list = new StringBuilder();
         for (Books book : getBookListing()) {
             if (Boolean.FALSE.equals(book.getCheckedout())) {
-                list.append(" - ").append(book.getTitle()).append(" | ").append(book.getAuthor()).append(" | ").append(book.getYear()).append("\n");
+                list.append(book.formatBook());
             }
         }
         return list.toString();
