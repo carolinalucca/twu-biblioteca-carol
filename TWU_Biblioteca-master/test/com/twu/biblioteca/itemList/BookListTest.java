@@ -24,9 +24,9 @@ public class BookListTest {
 
     @Before
     public void init() {
-        book1 = new Books("Mr. Mercedes", "Stephen King", 2016);
-        book2 = new Books("Lord of the Rings", "J. R. R. Tolken", 1954);
-        book3 = new Books("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997);
+        book1 = new Books("Mr. Mercedes", "Stephen King", 2016, false);
+        book2 = new Books("Lord of the Rings", "J. R. R. Tolken", 1954, false);
+        book3 = new Books("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997, false);
         bookList = new ArrayList<Books>();
         bookList.addAll(Arrays.asList(book1, book2, book3));
         bookListing = new BookListing();
@@ -44,7 +44,10 @@ public class BookListTest {
 
     @Test
     public void presentAListOfBooks() {
-        Books[] list = new Books[]{book1, book2, book3};
-        //assertEquals(Arrays.asList(list), bookListing.listOfBooks());
+        StringBuilder list = new StringBuilder();
+        for (Books book : bookList) {
+            list.append(" - ").append(book.getTitle()).append(" | ").append(book.getAuthor()).append(" | ").append(book.getYear()).append("\n");
+        }
+        assertEquals(list.toString(), bookListing.listOfBooks());
     }
 }

@@ -7,11 +7,13 @@ public class Books {
     private String title;
     private String author;
     private Integer year;
+    private Boolean checkout;
 
-    public Books(String title, String author, Integer year) {
+    public Books(String title, String author, Integer year, Boolean checkOut) {
         this.title = title;
         this.author = author;
         this.year = year;
+        this.checkout = checkOut;
     }
 
     public String getTitle() {
@@ -26,14 +28,6 @@ public class Books {
         return year;
     }
 
-    public String listOfBooks() {
-        String list = "";
-
-        return list;
-    }
-
-    //TODO metodo de listar (string)
-    //TODO init - chamar no construtor do objeto
-
+    public Boolean getCheckedout() { return checkout; }
 
 }
