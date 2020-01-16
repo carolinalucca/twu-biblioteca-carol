@@ -6,6 +6,7 @@ public class MessagePresenter {
     public static final String GOODBYE = "\nThank you for the visit!";
     public static final String INVALID = "\nInvalid option!";
     public static final String LIST_BOOKS = "\nList of books:";
+    public static final String CHECKOUT_SUCESS = "\nThank you! Enjoy the book";
 
     public void welcome() {
         System.out.println(WELCOME);
@@ -21,6 +22,10 @@ public class MessagePresenter {
 
     public void listOfBooks() {
         System.out.println(LIST_BOOKS);
+    }
+
+    public void checkoutSucess() {
+        System.out.println(CHECKOUT_SUCESS);
     }
 
 }

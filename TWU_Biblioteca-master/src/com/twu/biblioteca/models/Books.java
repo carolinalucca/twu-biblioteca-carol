@@ -1,7 +1,5 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.listing.BookListing;
-
 public class Books {
 
     private String title;

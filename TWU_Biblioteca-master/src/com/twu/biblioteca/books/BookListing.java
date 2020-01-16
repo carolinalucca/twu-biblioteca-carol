@@ -1,4 +1,4 @@
-package com.twu.biblioteca.listing;
+package com.twu.biblioteca.books;
 
 import com.twu.biblioteca.models.Books;
 
@@ -23,18 +23,8 @@ public class BookListing {
         this.bookList = bookList;
     }
 
-    private List<Books> getBookListing() {
+    public List<Books> getBookListing() {
         return bookList;
-    }
-
-    public String listOfBooks() {
-        StringBuilder list = new StringBuilder();
-        for (Books book : getBookListing()) {
-            if (Boolean.FALSE.equals(book.getCheckedout())) {
-                list.append(book.formatBook());
-            }
-        }
-        return list.toString();
     }
 
 }

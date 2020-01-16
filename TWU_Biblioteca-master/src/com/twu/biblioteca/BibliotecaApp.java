@@ -1,12 +1,11 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.application.BooksPresenter;
 import com.twu.biblioteca.application.MenuPresenter;
 import com.twu.biblioteca.application.MessagePresenter;
-import com.twu.biblioteca.listing.BookListing;
-import com.twu.biblioteca.models.Books;
+import com.twu.biblioteca.books.BookListing;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BibliotecaApp {
@@ -15,6 +14,8 @@ public class BibliotecaApp {
 
         MessagePresenter messagePresenter = new MessagePresenter();
         MenuPresenter menuPresenter = new MenuPresenter();
+        BooksPresenter booksPresenter = new BooksPresenter();
+        Scanner scan = new Scanner(System.in);
 
         messagePresenter.welcome();
 
@@ -23,8 +24,6 @@ public class BibliotecaApp {
         do {
 
             menuPresenter.present();
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Digite uma opção: ");
             option = scan.nextInt();
 
             switch (option) {
@@ -32,9 +31,10 @@ public class BibliotecaApp {
                     messagePresenter.goodbye();
                     break;
                 case 1:
-                    BookListing booksList = new BookListing();
                     messagePresenter.listOfBooks();
-                    System.out.println(booksList.listOfBooks());
+                    booksPresenter.listOfBooks(new BookListing());
+                    break;
+                case 2:
                     break;
                 default:
                     messagePresenter.invalid();
