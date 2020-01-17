@@ -13,7 +13,7 @@ public class BookRepository {
     public void init() {
         Book book1 = new Book("Mr. Mercedes", "Stephen King", 2016, false);
         Book book2 = new Book("Lord of the Rings", "J. R. R. Tolken", 1954, false);
-        Book book3 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997, true);
+        Book book3 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 1997, false);
 
         bookList.addAll(Arrays.asList(book1, book2, book3));
         this.bookList = bookList;
@@ -35,6 +35,16 @@ public class BookRepository {
             }
         }
         return list;
+    }
+
+    public Boolean checkout(String bookTitle) {
+        for (Book book : getBookList()) {
+            if (bookTitle.equalsIgnoreCase(book.getTitle())) {
+                book.setCheckout(true);
+                return true;
+            }
+        }
+        return false ;
     }
 
 }

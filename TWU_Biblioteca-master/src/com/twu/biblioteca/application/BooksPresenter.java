@@ -5,20 +5,13 @@ import com.twu.biblioteca.models.Book;
 
 public class BooksPresenter {
 
-    private BookRepository bookRepository;
-
-    public BooksPresenter() {
-        bookRepository = new BookRepository();
-        bookRepository.init();
-    }
-
-    public void present() {
+    public void present(BookRepository bookRepository) {
         System.out.println(MessagePresenter.LIST_BOOKS);
-        listOfBooks();
+        listOfBooks(bookRepository);
         System.out.println();
     }
 
-    private void listOfBooks() {
+    private void listOfBooks(BookRepository bookRepository) {
         for (Book book : bookRepository.getAvailableBooks()) {
             System.out.println(book.formatBook());
         }

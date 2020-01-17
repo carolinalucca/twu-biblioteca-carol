@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 
 
 public class BookRepositoryTest {
@@ -38,5 +37,11 @@ public class BookRepositoryTest {
     @Test
     public void shouldReturnAListOfAvailableBooks() {
         assertEquals(2, bookRepository.getAvailableBooks().size());
+    }
+
+    @Test
+    public void shouldReturnAnAvailableBook() {
+        String bookTitle = "Mr. Mercedes";
+        assertTrue(bookRepository.checkout(bookTitle));
     }
 }

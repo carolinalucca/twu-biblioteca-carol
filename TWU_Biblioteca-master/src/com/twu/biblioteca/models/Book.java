@@ -5,6 +5,7 @@ public class Book {
     private String title;
     private String author;
     private Integer year;
+
     private Boolean checkout;
 
     public Book(String title, String author, Integer year, Boolean checkOut) {
@@ -27,6 +28,10 @@ public class Book {
     }
 
     public Boolean getCheckedout() { return checkout; }
+
+    public void setCheckout(Boolean checkout) {
+        this.checkout = checkout;
+    }
 
     public String formatBook() {
         return " - " + getTitle() + " | " + getAuthor() + " | " + getYear();
