@@ -1,13 +1,13 @@
 package com.twu.biblioteca.models;
 
-public class Books {
+public class Book {
 
     private String title;
     private String author;
     private Integer year;
     private Boolean checkout;
 
-    public Books(String title, String author, Integer year, Boolean checkOut) {
+    public Book(String title, String author, Integer year, Boolean checkOut) {
         this.title = title;
         this.author = author;
         this.year = year;
@@ -29,7 +29,7 @@ public class Books {
     public Boolean getCheckedout() { return checkout; }
 
     public String formatBook() {
-        return " - " + getTitle() + " | " + getAuthor() + " | " + getYear() + "\n";
+        return " - " + getTitle() + " | " + getAuthor() + " | " + getYear();
     }
 
 }

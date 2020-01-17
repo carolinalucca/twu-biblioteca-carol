@@ -1,18 +1,27 @@
 package com.twu.biblioteca.application;
 
-import com.twu.biblioteca.books.BookListing;
-import com.twu.biblioteca.models.Books;
+import com.twu.biblioteca.books.BookRepository;
+import com.twu.biblioteca.models.Book;
 
 public class BooksPresenter {
 
-    public void listOfBooks(BookListing bookListing) {
-        StringBuilder list = new StringBuilder();
-        for (Books book : bookListing.getBookListing()) {
-            if (Boolean.FALSE.equals(book.getCheckedout())) {
-                list.append(book.formatBook());
-            }
+    private BookRepository bookRepository;
+
+    public BooksPresenter() {
+        bookRepository = new BookRepository();
+        bookRepository.init();
+    }
+
+    public void present() {
+        System.out.println(MessagePresenter.LIST_BOOKS);
+        listOfBooks();
+        System.out.println();
+    }
+
+    private void listOfBooks() {
+        for (Book book : bookRepository.getAvailableBooks()) {
+            System.out.println(book.formatBook());
         }
-        System.out.println(list.toString());
     }
 
 }
