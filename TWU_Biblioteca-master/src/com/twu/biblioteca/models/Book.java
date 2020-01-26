@@ -5,7 +5,6 @@ public class Book {
     private String title;
     private String author;
     private Integer year;
-
     private Boolean checkout;
 
     public Book(String title, String author, Integer year, Boolean checkOut) {
