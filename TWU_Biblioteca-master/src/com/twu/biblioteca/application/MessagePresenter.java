@@ -6,8 +6,10 @@ public class MessagePresenter {
     public static final String GOODBYE = "\nThank you for the visit!";
     public static final String INVALID = "\nInvalid option!";
     public static final String LIST_BOOKS = "\nList of books:";
-    public static final String CHECKOUT_SUCESS = "\nThank you! Enjoy the book";
+    public static final String CHECKOUT_SUCCESS = "\nThank you! Enjoy the book";
     public static final String CHECKOUT_ERROR = "\nSorry, that book is not available";
+    public static final String RETURN_SUCCESS = "\nThank you for returning the book";
+    public static final String RETURN_ERROR = "\nThat is not a valid book to return";
 
     public void welcome() {
         System.out.println(WELCOME);
@@ -26,11 +28,19 @@ public class MessagePresenter {
     }
 
     public void checkoutSucess() {
-        System.out.println(CHECKOUT_SUCESS);
+        System.out.println(CHECKOUT_SUCCESS);
     }
 
     public void checkoutError() {
         System.out.println(CHECKOUT_ERROR);
+    }
+
+    public void returnSuccess() {
+        System.out.println(RETURN_SUCCESS);
+    }
+
+    public void returnError() {
+        System.out.println(RETURN_ERROR);
     }
 
 }

@@ -1,24 +1,24 @@
 package com.twu.biblioteca.application;
 
 import com.twu.biblioteca.repository.BookRepository;
-import com.twu.biblioteca.bean.CheckoutBean;
+import com.twu.biblioteca.bean.ReturnBean;
 
 import java.util.Scanner;
 
-public class CheckoutPresenter {
+public class ReturnPresenter {
 
     private Scanner scan;
-    private CheckoutBean checkoutBean;
+    private ReturnBean returnBean;
 
-    public CheckoutPresenter() {
+    public ReturnPresenter() {
         scan = new Scanner(System.in);
-        checkoutBean = new CheckoutBean();
+        returnBean = new ReturnBean();
     }
 
     public void present(BookRepository bookRepository) {
         System.out.println("Type the name of the book:");
         String bookTitle = scan.nextLine();
-        System.out.println(checkoutBean.checkoutBook(bookRepository, bookTitle));
-
+        System.out.println(returnBean.returnBook(bookRepository, bookTitle));
     }
+
 }

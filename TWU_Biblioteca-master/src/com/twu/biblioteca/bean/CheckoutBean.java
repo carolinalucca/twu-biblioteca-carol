@@ -1,20 +1,15 @@
-package com.twu.biblioteca.repository;
+package com.twu.biblioteca.bean;
 
 import com.twu.biblioteca.application.MessagePresenter;
 import com.twu.biblioteca.repository.BookRepository;
 
-public class CheckoutReturnRepository {
+public class CheckoutBean {
 
     public String checkoutBook(BookRepository bookRepository, String bookTitle) {
-
-        String message;
-
         if (bookRepository.checkout(bookTitle)) {
-            message = MessagePresenter.CHECKOUT_SUCESS;
+            return MessagePresenter.CHECKOUT_SUCCESS;
         } else {
-            message = MessagePresenter.CHECKOUT_ERROR;
+            return MessagePresenter.CHECKOUT_ERROR;
         }
-
-        return message;
     }
 }

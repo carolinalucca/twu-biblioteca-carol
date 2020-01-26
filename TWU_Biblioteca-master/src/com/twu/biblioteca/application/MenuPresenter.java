@@ -11,12 +11,14 @@ public class MenuPresenter {
     private BooksPresenter booksPresenter;
     private Scanner scan;
     private CheckoutPresenter checkoutPresenter;
+    private ReturnPresenter returnPresenter;
 
     public MenuPresenter() {
         bookRepository = new BookRepository();
         messagePresenter = new MessagePresenter();
         booksPresenter = new BooksPresenter();
         checkoutPresenter = new CheckoutPresenter();
+        returnPresenter = new ReturnPresenter();
         scan = new Scanner(System.in);
     }
 
@@ -48,6 +50,7 @@ public class MenuPresenter {
                     checkoutPresenter.present(bookRepository);
                     break;
                 case 3:
+                    returnPresenter.present(bookRepository);
                     break;
                 default:
                     messagePresenter.invalid();
