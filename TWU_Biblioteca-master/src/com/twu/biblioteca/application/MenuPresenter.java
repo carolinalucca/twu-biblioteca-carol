@@ -1,6 +1,6 @@
 package com.twu.biblioteca.application;
 
-import com.twu.biblioteca.books.BookRepository;
+import com.twu.biblioteca.repository.BookRepository;
 
 import java.util.Scanner;
 
@@ -30,6 +30,7 @@ public class MenuPresenter {
             System.out.println("------------- MENU -------------");
             System.out.println("1 - List of books");
             System.out.println("2 - Checkout book");
+            System.out.println("3 - Return book");
             System.out.println("0 - Exit");
             System.out.println("--------------------------------");
             System.out.println("Type an option: ");
@@ -45,6 +46,8 @@ public class MenuPresenter {
                     break;
                 case 2:
                     checkoutPresenter.present(bookRepository);
+                    break;
+                case 3:
                     break;
                 default:
                     messagePresenter.invalid();

@@ -1,9 +1,9 @@
-package com.twu.biblioteca.checkout;
+package com.twu.biblioteca.repository;
 
 import com.twu.biblioteca.application.MessagePresenter;
-import com.twu.biblioteca.books.BookRepository;
+import com.twu.biblioteca.repository.BookRepository;
 
-public class CheckoutRepository {
+public class CheckoutReturnRepository {
 
     public String checkoutBook(BookRepository bookRepository, String bookTitle) {
 

@@ -1,6 +1,6 @@
 package com.twu.biblioteca.application;
 
-import com.twu.biblioteca.books.BookRepository;
+import com.twu.biblioteca.repository.BookRepository;
 import com.twu.biblioteca.models.Book;
 
 public class BooksPresenter {

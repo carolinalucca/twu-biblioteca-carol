@@ -1,4 +1,4 @@
-package com.twu.biblioteca.books;
+package com.twu.biblioteca.repository;
 
 import com.twu.biblioteca.models.Book;
 
@@ -45,6 +45,16 @@ public class BookRepository {
             }
         }
         return false ;
+    }
+
+    public Boolean returnBook(String bookTitle) {
+        for (Book book : getBookList()) {
+            if (bookTitle.equalsIgnoreCase(book.getTitle())) {
+                book.setCheckout(false);
+                return true;
+            }
+        }
+        return false;
     }
 
 }

@@ -1,6 +1,7 @@
 package com.twu.biblioteca.books;
 
 import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.repository.BookRepository;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,8 +41,27 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void shouldReturnAnAvailableBook() {
+    public void shouldReturnTrueWhenBookIsAvailable() {
         String bookTitle = "Mr. Mercedes";
         assertTrue(bookRepository.checkout(bookTitle));
     }
+
+    @Test
+    public void shouldReturnFalseWhenBookIsNotAvailableOrMisspelled() {
+        String bookTitle = "Test";
+        assertFalse(bookRepository.checkout(bookTitle));
+    }
+
+    @Test
+    public void shouldReturnTrueWhenBookReturnSuccessfully() {
+        String bookTitle = "Mr. Mercedes";
+        assertTrue(bookRepository.returnBook(bookTitle));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenBookReturnError() {
+        String bookTitle = "Test";
+        assertFalse(bookRepository.returnBook(bookTitle));
+    }
+
 }

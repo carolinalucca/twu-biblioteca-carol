@@ -1,8 +1,9 @@
 package com.twu.biblioteca.checkout;
 
 import com.twu.biblioteca.application.MessagePresenter;
-import com.twu.biblioteca.books.BookRepository;
+import com.twu.biblioteca.repository.BookRepository;
 import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.repository.CheckoutReturnRepository;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,16 +13,16 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class CheckoutRepositoryTest {
+public class CheckoutReturnRepositoryTest {
 
     public BookRepository bookRepository;
     public Book book1;
-    public CheckoutRepository checkoutRepository;
+    public CheckoutReturnRepository checkoutReturnRepository;
 
     @Before
     public void init() {
         bookRepository = new BookRepository();
-        checkoutRepository = new CheckoutRepository();
+        checkoutReturnRepository = new CheckoutReturnRepository();
         book1 = new Book("Mr. Mercedes", "Stephen King", 2016, false);
         List<Book> list = new ArrayList<>();
         list.addAll(Arrays.asList(book1));
@@ -30,12 +31,12 @@ public class CheckoutRepositoryTest {
 
     @Test
     public void shouldReturnASuccessMessageWhenBookIsAvailable() {
-        assertEquals(MessagePresenter.CHECKOUT_SUCESS, checkoutRepository.checkoutBook(bookRepository, "Mr. Mercedes"));
+        assertEquals(MessagePresenter.CHECKOUT_SUCESS, checkoutReturnRepository.checkoutBook(bookRepository, "Mr. Mercedes"));
     }
 
     @Test
     public void shouldReturnAnErrorMessageWhenBookIsNotAvailableOrMisspelled() {
-        assertEquals(MessagePresenter.CHECKOUT_ERROR, checkoutRepository.checkoutBook(bookRepository, "Test"));
+        assertEquals(MessagePresenter.CHECKOUT_ERROR, checkoutReturnRepository.checkoutBook(bookRepository, "Test"));
 
     }
 }
