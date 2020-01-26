@@ -7,6 +7,7 @@ public class MessagePresenter {
     public static final String INVALID = "\nInvalid option!";
     public static final String LIST_BOOKS = "\nList of books:";
     public static final String CHECKOUT_SUCESS = "\nThank you! Enjoy the book";
+    public static final String CHECKOUT_ERROR = "\nSorry, that book is not available";
 
     public void welcome() {
         System.out.println(WELCOME);
@@ -26,6 +27,10 @@ public class MessagePresenter {
 
     public void checkoutSucess() {
         System.out.println(CHECKOUT_SUCESS);
+    }
+
+    public void checkoutError() {
+        System.out.println(CHECKOUT_ERROR);
     }
 
 }
