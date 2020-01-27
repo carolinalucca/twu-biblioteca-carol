@@ -8,7 +8,7 @@ public class MovieTest {
     @Test
     public void shouldReturnFormatMovie() {
         String expected = " - Almost Famous | 2000 | Cameron Crowe | 7.9";
-        Movie movie = new Movie("Almost Famous", 2000, "Cameron Crowe", 7.9);
+        Movie movie = new Movie("Almost Famous", 2000, "Cameron Crowe", 7.9, false);
         assertEquals(expected, movie.formatMovie());
     }
 }

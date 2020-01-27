@@ -19,9 +19,9 @@ public class MovieRepositoryTest {
 
     @Before
     public void init() {
-        movie1 = new Movie("Almost Famous", 2000, "Cameron Crowe", 7.9);
-        movie2 =  new Movie("Inside Out", 2015, "Pete Docter", 9.2);
-        movie3 = new Movie("Eternal Sunshine of the Spotless Mind", 2004, "Michel Gondry", 8.3);
+        movie1 = new Movie("Almost Famous", 2000, "Cameron Crowe", 7.9, false);
+        movie2 =  new Movie("Inside Out", 2015, "Pete Docter", 9.2, false);
+        movie3 = new Movie("Eternal Sunshine of the Spotless Mind", 2004, "Michel Gondry", 8.3, true);
         movieRepository = new MovieRepository();
         List<Movie> movieList = new ArrayList<>();
         movieList.addAll(Arrays.asList(movie1, movie2, movie3));
@@ -31,6 +31,11 @@ public class MovieRepositoryTest {
     @Test
     public void shouldReturnAListOf3Movies() {
         assertEquals(3, movieRepository.getMovieList().size());
+    }
+
+    @Test
+    public void shouldReturnAListOf2AvailableMovies() {
+        assertEquals(2, movieRepository.getAvailableMovies().size());
     }
 
 

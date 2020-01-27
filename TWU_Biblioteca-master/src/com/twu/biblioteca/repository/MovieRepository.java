@@ -17,4 +17,14 @@ public class MovieRepository {
         this.movieList = movieList;
     }
 
+    public List<Movie> getAvailableMovies() {
+        List<Movie> list = new ArrayList<>();
+        for (Movie movie : getMovieList()) {
+            if (Boolean.FALSE.equals(movie.getCheckout())) {
+                list.add(movie);
+            }
+        }
+        return list;
+    }
+
 }

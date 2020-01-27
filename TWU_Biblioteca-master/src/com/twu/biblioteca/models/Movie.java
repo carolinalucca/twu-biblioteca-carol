@@ -5,15 +5,16 @@ public class Movie {
     private String title;
     private Integer year;
     private String director;
+    private Double rating;
+    private Boolean checkout;
 
-    public Movie(String title, Integer year, String director, Double rating) {
+    public Movie(String title, Integer year, String director, Double rating, Boolean checkout) {
         this.title = title;
         this.year = year;
         this.director = director;
         this.rating = rating;
+        this.checkout = checkout;
     }
-
-    private Double rating;
 
     public String getTitle() {
         return title;
@@ -30,6 +31,8 @@ public class Movie {
     public Double getRating() {
         return rating;
     }
+
+    public Boolean getCheckout() { return checkout; }
 
     public String formatMovie() {
         return " - " + getTitle() + " | " + getYear() + " | " + getDirector() + " | " + getRating();
