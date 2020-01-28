@@ -1,24 +1,29 @@
 package com.twu.biblioteca.application;
 
 import com.twu.biblioteca.repository.BookRepository;
+import com.twu.biblioteca.repository.MovieRepository;
 
 import java.util.Scanner;
 
 public class MenuPresenter {
 
     private BookRepository bookRepository;
+    private MovieRepository movieRepository;
     private MessagePresenter messagePresenter;
     private BooksPresenter booksPresenter;
     private Scanner scan;
     private CheckoutPresenter checkoutPresenter;
     private ReturnPresenter returnPresenter;
+    private MoviesPresenter moviesPresenter;
 
     public MenuPresenter() {
         bookRepository = new BookRepository();
+        movieRepository = new MovieRepository();
         messagePresenter = new MessagePresenter();
         booksPresenter = new BooksPresenter();
         checkoutPresenter = new CheckoutPresenter();
         returnPresenter = new ReturnPresenter();
+        moviesPresenter = new MoviesPresenter();
         scan = new Scanner(System.in);
     }
 
@@ -26,6 +31,7 @@ public class MenuPresenter {
 
         int option = 0;
         bookRepository.init();
+        movieRepository.init();
 
         do {
 
@@ -54,7 +60,8 @@ public class MenuPresenter {
                     returnPresenter.present(bookRepository);
                     break;
                 case 4:
-
+                    moviesPresenter.present(movieRepository);
+                    break;
                 default:
                     messagePresenter.invalid();
                     break;
