@@ -1,7 +1,6 @@
-package com.twu.biblioteca.books;
+package com.twu.biblioteca.repository;
 
 import com.twu.biblioteca.models.Book;
-import com.twu.biblioteca.repository.BookRepository;
 import org.junit.Before;
 import org.junit.Test;
 

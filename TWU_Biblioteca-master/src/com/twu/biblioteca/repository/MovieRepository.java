@@ -43,4 +43,8 @@ public class MovieRepository {
         return list;
     }
 
+    public Boolean checkout(String movieTitle) {
+        return true;
+    }
+
 }

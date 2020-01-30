@@ -1,4 +1,4 @@
-package com.twu.biblioteca.movies;
+package com.twu.biblioteca.repository;
 
 import com.twu.biblioteca.models.Movie;
 import com.twu.biblioteca.repository.MovieRepository;
@@ -36,6 +36,12 @@ public class MovieRepositoryTest {
     @Test
     public void shouldReturnAListOf2AvailableMovies() {
         assertEquals(2, movieRepository.getAvailableMovies().size());
+    }
+
+    @Test
+    public void shouldReturnTrueWhenMovieIsAvailable() {
+        String movieTitle = "Almost Famous";
+        assertTrue(movieRepository.checkout(movieTitle));
     }
 
 
