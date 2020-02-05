@@ -45,7 +45,7 @@ public class BookRepository {
 
     public Boolean checkout(String bookTitle) {
         for (Book book : getBookList()) {
-            if (bookTitle.equalsIgnoreCase(book.getTitle())) {
+            if (bookTitle.equalsIgnoreCase(book.getTitle().trim())) {
                 book.setCheckout(true);
                 return true;
             }
@@ -55,7 +55,7 @@ public class BookRepository {
 
     public Boolean returnBook(String bookTitle) {
         for (Book book : getBookList()) {
-            if (bookTitle.equalsIgnoreCase(book.getTitle())) {
+            if (bookTitle.equalsIgnoreCase(book.getTitle().trim())) {
                 book.setCheckout(false);
                 return true;
             }

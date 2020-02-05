@@ -30,12 +30,12 @@ public class CheckoutBeanTest {
 
     @Test
     public void shouldReturnASuccessMessageWhenBookIsAvailable() {
-        assertEquals(MessagePresenter.CHECKOUT_SUCCESS, checkoutBean.checkoutBook(bookRepository, "Mr. Mercedes"));
+        assertEquals(MessagePresenter.CHECKOUT_BOOK_SUCCESS, checkoutBean.checkoutBook(bookRepository, "Mr. Mercedes"));
     }
 
     @Test
     public void shouldReturnAnErrorMessageWhenBookIsNotAvailableOrMisspelled() {
-        assertEquals(MessagePresenter.CHECKOUT_ERROR, checkoutBean.checkoutBook(bookRepository, "Test"));
+        assertEquals(MessagePresenter.CHECKOUT_BOOK_ERROR, checkoutBean.checkoutBook(bookRepository, "Test"));
 
     }
 }

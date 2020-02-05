@@ -34,6 +34,10 @@ public class Movie {
 
     public Boolean getCheckout() { return checkout; }
 
+    public void setCheckout(Boolean checkout) {
+        this.checkout = checkout;
+    }
+
     public String formatMovie() {
         return " - " + getTitle() + " | " + getYear() + " | " + getDirector() + " | " + getRating();
     }

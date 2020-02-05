@@ -2,6 +2,7 @@ package com.twu.biblioteca.application;
 
 import com.twu.biblioteca.repository.BookRepository;
 import com.twu.biblioteca.bean.CheckoutBean;
+import com.twu.biblioteca.repository.MovieRepository;
 
 import java.util.Scanner;
 
@@ -20,5 +21,11 @@ public class CheckoutPresenter {
         String bookTitle = scan.nextLine();
         System.out.println(checkoutBean.checkoutBook(bookRepository, bookTitle));
 
+    }
+
+    public void present(MovieRepository movieRepository) {
+        System.out.println("Type the name of the movie:");
+        String movieTitle = scan.nextLine();
+        System.out.println(checkoutBean.checkoutMovie(movieRepository, movieTitle));
     }
 }

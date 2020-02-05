@@ -44,7 +44,13 @@ public class MovieRepository {
     }
 
     public Boolean checkout(String movieTitle) {
-        return true;
+        for (Movie movie : getAvailableMovies()) {
+            if (movieTitle.equalsIgnoreCase(movie.getTitle().trim())) {
+                movie.setCheckout(true);
+                return true;
+            }
+        }
+        return false;
     }
 
 }

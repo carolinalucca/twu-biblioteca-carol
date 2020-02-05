@@ -44,5 +44,4 @@ public class MovieRepositoryTest {
         assertTrue(movieRepository.checkout(movieTitle));
     }
 
-
 }
